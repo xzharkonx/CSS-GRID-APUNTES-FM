@@ -1,0 +1,44 @@
+.contenedor {
+
+    /* De está forma le vamos a decir que el contenedor va a ser una grid. */
+    display: grid;
+    grid-gap: 20px; /* Para dar espaciados entre las cajas */
+    grid-template-columns:  repeat(3, 150px); /* Para crear 4 columnas 1 fr c/u*/
+    grid-template-rows: repeat(3, 150px); /* Para crear 4 filas 1 fr c/u*/
+    /*grid-template-rows: repeat(6, 1fr);*/ /* Para crear 4 filas 1 fr c/u*/
+
+    /* Recomendación: usar el modo inspector, y en layaout activar la casila de la GRID */
+
+    /* Se dejan esos espacios a las columnas precisamente para lograr un espaciado grande a la derecha. */
+
+    /* Este espacio lo podríamos usar par acomodar nuestra GRID, cada grupo lo podríamos mover por
+    cualquier parte de del espacio moviendose ocupando el espacio restante */
+
+    /* Le agregamos un alto adicional para ver mejor el efecto */
+    height: 700px;
+
+    /* Ocuparemos las siguientes propiedades para acomodar el contenido. */
+    /* Valores de esas propiedades: start, center, end, auto, space-around, space-between, space-evenly*/
+    /* space-evenly: casi igual que space-around pero es más bonito porque mantiene los mismos espaciados anchos al rededor (izq y der). */
+
+    /* Horizontalmente */
+    /* Mira como se mueve todo el contenido.*/
+    /* justify-content: start; */
+    /* justify-content: center; */
+    /* justify-content: end; */
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+
+    
+    /* Verticalmente */
+    /* Mira como se mueve todo el contenido. */
+    /* align-content: start; */
+    /* align-content: center; */
+    /* align-content: end; */
+    /* align-content: space-around; */
+    /* align-content: space-between; */
+    align-content: space-evenly;
+}
+
+

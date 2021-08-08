@@ -1,0 +1,104 @@
+.contenedor {
+
+    /* De está forma le vamos a decir que el contenedor va a ser una grid. */
+    display: grid;
+    grid-gap: 20px; /* Para dar espaciados entre las cajas */
+    grid-template-columns:  repeat(4, 1fr); /* Para crear 4 columnas 1 fr c/u*/
+    /* grid-template-columns:  repeat(5, 1fr); */ /* Para crear 4 columnas 1 fr c/u*/
+    grid-template-rows: repeat(4, 1fr); /* Para crear 4 filas 1 fr c/u*/
+    /*grid-template-rows: repeat(6, 1fr);*/ /* Para crear 4 filas 1 fr c/u*/
+
+
+}
+
+.contenedor .item {
+    background: #ff8000;
+    
+    /* ----------------------------- Columnas ----------------------------- */
+    /* Cambiando el ordén y posicionamiento de cada uno de nuestros elementos. */
+    /* Le podemos especificar que inicie en la línea que querramos, por ejemplo en la línea 1. */
+    grid-column-start: 1;
+    /* Le podemos especificar que termine en la línea que querramos, por ejemplo en la línea 2. */
+    /* grid-column-end: 2; */
+    /* grid-column-end: 5; */
+    
+    /* --------------------------------------------------------------------------- */
+    /* Esto lo puedes acomodar siguiendo las reglas que podemos mostrar en pantalla
+    con la ayuda del inspector de código, luego en elements y en la pestaña de layaout
+    buscamos y activamos las reglas para las cajas con ejectos de grid. */
+    /* --------------------------------------------------------------------------- */
+    
+    /* Al poner -1 le indicamos que ahora inicie a expanderse en sentido contrario de derecha
+    a izquierda, por eso ahora abarcará todo el contenido.
+    Porque como se incremento el número de columnas a 5, entonces del sentido contrario sería -5
+    de derecha y hasta izquierda del todo sería -1, por lo que esto nos convendría para cuando
+    queramos ir añadiendo más columnas pues solo coloquemos -1 y en automatico considerará todo
+    el espacio porque estará yendo de un número que no conocemos como cambiará hasta -1 */
+    
+    /* grid-column-start: 1; */
+    /* grid-column-start: 2; */
+    
+    /* grid-column-end: -1; */
+    /* grid-column-end: -2; */
+    
+    
+    /* También afectará el número de columnas que queremos que abarque si estamos trabajando con las el
+    acomodo de las filas. */
+    /* grid-column-end: 3; */
+    grid-column-end: 2;
+    
+    /* ----------------------------- Filas ----------------------------- */
+    /* También podemos decirle que abarque hasta 2 filas o las que queramos */
+    /* Le decimos que vaya desde la fila 2 hasta la 4. */
+    /* grid-row-start: 2; */
+    /* grid-row-end: 4; */
+    
+    
+    /* --------------------------------------------------------------------------- */
+    /* También para que abarque todas las filas hacia abajo y evitar estar calculando podremos usar de
+    nuevo un -1 para indicarle que vaya desde el inicio hasta el final. */
+    /* 
+        grid-row-start: 1;
+        grid-row-end: -1; 
+    */
+    
+    /* También dependerá de la linea implicita, es decir el número de filas que va a abarcar
+    nuestro contenedor, si son más de 4 filas, entonces las filas se reacomodarán debajo, si
+    no, el -1 de grid-row-end: -1 solo llega hasta los 4 renglones en grid-template-rows: repeat(4, 1fr);
+    definidos, por lo que si colocamos a este elemento que es de grid-column-end: 3; los elementos que restan
+    se posicionarán debajo por las 4 filas que colocamos en la caja del contenedor.
+    Lo que tendríamos que hacer es disminuir la grid-column-end de este elemento a 2 o bien incrementar el
+    tamaño de las columnas a 5 o 6 etc..., dependerá del acomodo de las cajas, pero siempre harbrá que ir viendo y
+    probando para cada tamaño. */
+
+    /* ----------------------------- Atajos ----------------------------- */
+    /* Atajos de codigo para estás líneas */
+    /* Le indicamos que al inicio vaya de 1 y al final de 4 */
+    /* grid-column: 1 / 4; */
+    /* grid-row: 1 / 2; */
+
+    /* O bien solo reducirlo a 1 línea de la siguiente manera */
+    /* Tomara 4 valores en este orden: */
+    
+    /* 
+        Primer parametro: grid-row-start: ;
+        Segundo parametro: grid-column-start: ;
+        Tercer parametro: grid-row-end: ;
+        Cuarto parametro: grid-column-end: ; 
+    */
+
+    /* grid-area: 1 / 1 / 4 / 4; */
+
+    /* ----------------------------- span ----------------------------- */
+    /* también tenemos una propiedad que se encarga de estirar tanto en columnas como en filas nestro elemento. */
+    /* Para ello haremos lo mismo de posicionar la columna pero ahora utilizaremos la palabra span seguido de un número
+    que dirá cuantas columnas queremos que abarque y no de posición. */
+    /* grid-column: 1 / span 3; */
+    /* O bien con solo span para que abarque desde su posición original 3 columnas */
+    grid-column: span 3;
+    
+    /* También funciona para las filas */
+    grid-row: 3 /span 2;
+}
+
+

@@ -1,0 +1,89 @@
+.contenedor {
+
+    /* De está forma le vamos a decir que el contenedor va a ser una grid. */
+    display: grid;
+    grid-gap: 20px; /* Para dar espaciados entre las cajas */
+    grid-template-columns:  200px 1fr 200px; /* Para crear 4 columnas 1 fr c/u*/
+    grid-template-rows: 200px 100px 200px; /* Para crear 4 filas 1 fr c/u*/
+
+    /* Recomendación: usar el modo inspector, y en layaout activar la casila de la GRID */
+
+    /* ---------------------------- GRID Implícita ---------------------------- */
+
+    /* Esto que tenemos aquí es una GRID Explícita, por que nosotros especificamente le pusimos que tuviera
+    3 columnas y 3 filas y nos da lo siguiete. */
+
+    /* Pero el problema va  venir cuando nosotros agregamos un elemento (div 10), seguira la misma estructura
+    y nos agregará una fila adicional y eso no va con lo que le indicamos de 3 filas y 3 columnas. Porque no cabe.*/
+
+    /* Entonces como ese elemento que agregamos creo una nueva fila se podría decir que está en el área de ahora una
+    nueva GRID llamada Implícita, por lo que toda el área que hayamos definido y donde se ubican nuestros primeros elementos
+    es la GRID Explícita. */
+
+    /* Ahora entendiendo como se ubican estos elementos ya sea en la GRID Explícita (la que definimos) y la
+    GRID Implícita (a donde se mueven los demás elementos que no caben) procederemos a ver como maniipular
+    los elementos de la GRID Implícita. */
+
+    /* Ahora agregaremos más elementos del div 11 al 15 */
+    /* Ahora les aremos algunas modificaciones */
+
+    /* Filas / darles tamaño */
+    /* Se edita el alto de las filas para los elementos que están el la GRID Implícita. */
+    /* grid-auto-rows: 400px; */
+    
+    
+    /* ---------------------------- Flujo de las columnas ---------------------------- */
+
+    /* Columnas / darles tamaño */
+    /* Tiene un problemita: Tenemos que ocupar otra propiedad para cambiar como el Flow de nuestra grid (acomodo u orientación) */
+    
+    /* Orientación de elementos */
+    /* grid-auto-flow: row;*/ /* Por defecto lo tenemos en modo fila */
+    /* grid-auto-flow: column;  */
+    /* Mira como se debieron haber rotado los elementos y
+    que ahora podemos hacer más largas o anchas las columnas con la propiedad de abajo. */
+    /* grid-auto-columns: 100px; */
+    
+    
+    /* grid-auto-flow: row;  */
+    grid-auto-rows: 100px;
+
+    /* Al colocar las propiedades de ariba y algunos estilos de tamaño abajo,
+    nos daremos cuenta que quedán algunos espacios vacios por lo que podemos usar
+    la siguiente propiedad "dense" para cubrirlos con los elementos que están el la GRID Implícita
+    o bien el reacomodo de nuestras cajas para que rellenen bien todo el espacio libre. */
+
+    /* Para un formato de Fila */
+    /* grid-auto-flow: dense; */
+    /* grid-auto-flow: row dense; */
+    
+    /* Para un formato de Columnas */
+    grid-auto-flow: column dense;
+}
+
+
+/* Hay otros elementos que también nos pueden ayudar */
+
+/* Les daremos un esptamaño de columna diferente a esos elementos */
+.contenedor .span2 {
+    /* Cuando trabajamos con columnas */
+    /* Espaciado de columnas */
+    /* grid-column: span 2; */
+    
+    /* Cuando trabajamos con filas */
+    /* Espaciado de filas */
+    grid-row: span 2;
+    background: #ff8000;
+}
+
+.contenedor .span3 {
+    
+    /* Cuando trabajamos con columnas */
+    /* Espaciado de columnas */
+    /* grid-column: span 3; */
+    
+    /* Cuando trabajamos con filas */
+    /* Espaciado de filas */
+    grid-row: span 3;
+    background: #1e2e3e;
+}

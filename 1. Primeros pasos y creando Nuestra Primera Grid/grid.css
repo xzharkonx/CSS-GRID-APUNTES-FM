@@ -1,0 +1,43 @@
+.contenedor {
+    /* De está forma le vamos a decir que el contenedor va a ser una grid. */
+    display: grid;
+    
+    /* Ahora nosotros podemos especificarle cuantas filas y columnas tenga. */
+    /* Especificaremos cada columna con un valor de ancho y un expaciado para crear otra. */
+    /* Míra como se modifica la anchura de las columnas */
+    /* grid-template-columns: 100px 100px; */
+    
+    /* Agregamos una tercera columna. */
+    /* grid-template-columns: 100px 100px 100px; */
+    
+    /* Pero con CSS GRID tenemos una nueva unidad que es basante interesante que es fr (una fracción). */
+    /* Por lo que dividirá en 3 fracciones el espacio del conenedor. */
+    /* grid-template-columns: 1fr 1fr 1fr;  */
+    
+    /* También podemos darle espaciado especificamente a una columna (la anchura) y el espacio
+    restante que se fraccione. */
+    /* grid-template-columns: 200px 1fr 1fr;  */
+    /* grid-template-columns: 200px 1fr 1fr 200px;  */
+    
+    /* También podemos decirle que los tamaños varien por fracciones, es decir por el doble o triple
+    y así sucesivamente.*/
+    grid-template-columns: 1fr 2fr 1fr; 
+
+    /* También funciona para las rows de abajo pero habrá que agregarle un alto con height. */
+    /* height: 800px; */
+
+    /* Creando las filas */
+    /* Especificaremos el tamaño para cada uno de los elementos de la fila */
+    /* Míra como se modifica la altura de las primeas 2 filas */
+    grid-template-rows: 150px 300px;
+
+    /* Con grid-gap se le podrá poner unos espaciados entre cada uno de los elementos */
+    grid-gap: 20px;
+
+    /* Podemos ir a herramientas de inspector, luego a elements, y dentro de elements buscar la
+    pestaña de layaouts donde podemos activar algunas opciones para ver la grid y los tamaños
+    que hay. */
+
+    /* Agregamos un espaciado hacia adentro del contenedor para que se vean más bonitas las cajas. */
+    padding: 20px;
+}

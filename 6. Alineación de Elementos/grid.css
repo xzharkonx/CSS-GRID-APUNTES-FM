@@ -1,0 +1,54 @@
+.contenedor {
+
+    /* De está forma le vamos a decir que el contenedor va a ser una grid. */
+    display: grid;
+    grid-gap: 20px; /* Para dar espaciados entre las cajas */
+    grid-template-columns:  repeat(3, 1fr); /* Para crear 4 columnas 1 fr c/u*/
+    grid-template-rows: repeat(3, 200px); /* Para crear 4 filas 1 fr c/u*/
+    /*grid-template-rows: repeat(6, 1fr);*/ /* Para crear 4 filas 1 fr c/u*/
+
+    /* Recomendación: usar el modo inspector, y en layaout activar la casila de la GRID */
+
+    /* Con esta configuración nuestras cajas realmente solo abarcan el espacio
+    del texto más no todo lo sobrante, por lo que está tomando cada uno de esos div
+    y los está estirando para que abarquen todo el ancho y todo el largo disponible
+    de cada una de nuestras celdas. */
+    /* Pero esto se puede cambiar para que cada uno de nuestros elementos abarque
+    lo que necesita. */
+
+
+    /* Para ello tenemos estás propiedades que nos van a permitir tanto alinear
+    vertical como horizontalmente. */
+
+    /* Nos va a permitir acomodar un elmento de forma horizontal */
+    /* Valores: start, center, end, auto, stretch */
+    /* auto: tamaño automático. */
+    /* stretch: abaraca todo el espacio disponible. */
+
+    /* Pareciera que toda la caja se comprime a la izquierda (si es la opción start)
+    abarcando solo lo que tiene el contenido dentro del espacio que fue definido como GRID*/
+    /* Esta configuración comprime el contenido horizontalmente en relación al contneido dentro del espacio definido por la GRID. */
+    justify-items: center;
+    /* Pareciera que toda la caja se comprime hacia arriba (si es la opción start)
+    abarcando solo lo que tiene el contenido dentro del espacio que fue definido como GRID*/
+    /* Esta configuración comprime el contenido verticalmente en relación al contneido dentro del espacio definido por la GRID. */
+    align-items: center;
+}
+
+.contenedor .item {
+    background: #ff8000;
+    /* No se ocuparía está propiedad porque llena incluso los margenes interiores que se crearon. */
+    /* width: 100%; */
+    /* Utilizariamos estas 2 propiedades para los elementos de forma independiente. */
+    /* Ahora si con esta propiedad abarcaría el 100% de la celda y nos estrá respetando los margenes. */
+    
+    /* justify-self: start; */
+    /* justify-self: center; */
+    /* justify-self: end; */
+    justify-self: stretch;
+    /* align-self: start; */
+    /* align-self: center; */
+    /* align-self: end; */
+    align-self: stretch;
+}
+

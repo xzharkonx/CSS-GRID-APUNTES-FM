@@ -1,0 +1,30 @@
+.contenedor {
+
+    /* De está forma le vamos a decir que el contenedor va a ser una grid. */
+    display: grid;
+    grid-gap: 20px; /* Para dar espaciados */
+    
+    /* Mira que al ponerlo así no se respetan los tamaños por que si el contenedor
+    es muy chivo se llega a desbordar */
+    /* Para evitar este problema lo mejor es trabajar con un tamaño mínimo y máximo para que
+    este contenedor pueda contener todo correctamente. */
+
+    /* Para eso utilizaremos la función de minmax() */
+    /* Esta recibira 2 parametros, el primero es el tamaño minimo y el segundo es el tamaño máximo. */
+    /* Lo que hará será que al hacerse más pequeño, la primera columna mantenga su tamaño de 300px en 
+    cambio las medidas en fr serán responsivas. */
+    grid-template-columns: minmax(300px, 1fr) 1fr; 
+
+    /* Habrá momentos en los que al hacerse más pequeño el contenedor las cajas hijo se salgan de este
+    contenedor, esto podríamos arreglarlo con mediaQueries. */
+
+    /* Esto podría utilizarse más para los columnas. */
+
+    /* grid-template-rows: minmax(150px, 200px) 400px; */
+
+    /* También se le puede asignar un tamaño automático para el tamaño que necesite tener hasta
+    un minimo de 100 px. */
+    grid-template-rows: minmax(100px, auto) 400px;
+
+
+}

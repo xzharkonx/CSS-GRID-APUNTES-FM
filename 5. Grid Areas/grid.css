@@ -1,0 +1,89 @@
+.contenedor {
+
+    /* De está forma le vamos a decir que el contenedor va a ser una grid. */
+    display: grid;
+    grid-gap: 20px; /* Para dar espaciados entre las cajas */
+    grid-template-columns:  repeat(3, 1fr); /* Para crear 4 columnas 1 fr c/u*/
+    /*grid-template-rows: repeat(6, 1fr);*/ /* Para crear 4 filas 1 fr c/u*/
+
+    /* Especificamos el Área */
+    /* Como formamos una 1 fila con 3 columnas, lo que haremos
+    será indicarle que el header ocupara la primera fila
+    y por ello colocamos 3 el header para que ocupe las 
+    primeras 3 columnas. */
+    /* Aquí header puede ser una palabra cualquiera, solo
+    que es como quisimos llamar a esa área. */
+    /* Mira que hicimos como una matriz de todas esas areas asignandole un nombre */
+    grid-template-areas: "header      header      header"
+                         "sidebar-1   contenido   sidebar-2"
+                         "sidebar-1   widgets     sidebar-2"
+                         "footer      footer      footer";
+
+
+    /* Ahora como ya sabemos que tenemos 4 filas, lo ideal sería poner lo siguiente */
+    /* Con esto no habría ningún cambio pero estaríamos aplicando la grid implicita (la que
+    le estamos diciendo). */
+    grid-template-rows: repeat(4, auto);
+    /* Si sobrán elementos (cajas) podemos quitarlos para que quede bien encuadrada. */
+}
+
+.contenedor .header {
+    background: #ff8000;
+    /* De donde a donde queremos que vaya */
+    grid-column-start: header;
+    grid-column-end: header;
+    /* padding-bottom: 50px;     */
+    margin-bottom: 50px;
+}
+
+.contenedor .sidebar-1{
+    background: #393e46;
+    /* Forma n°1 de hacerlo */
+    /* De donde a donde queremos que vaya */
+    /* grid-column-start: sidebar-1; */
+    /* grid-column-end: sidebar-1; */
+
+    /* También especificamos para las filas */
+    /* grid-row-start: sidebar-1; */
+    /* grid-row-end: sidebar-1; */
+
+
+    /* Forma n°2 de hacerlo */
+    /* grid-column: sidebar-1; */
+    /* grid-row: sidebar-1; */
+
+
+    /* Forma n°3 de hacerlo */
+    grid-area: sidebar-1;
+    margin-right: 50px;
+}
+
+.contenedor .contenido{
+    background: #f2f2f2;
+    color: #393e46;
+    /* Nombre que definimos arriba del area que ocupara */
+    grid-area: contenido;
+}
+.contenedor .widgets{
+    background: #ff8000;
+    color: #393e46;
+    /* Nombre que definimos arriba del area que ocupara */
+    grid-area: widgets;
+    /* padding-bottom: 100px; */
+}
+.contenedor .sidebar-2{
+    background: #393e46;
+    /* Nombre que definimos arriba del area que ocupara */
+    grid-area: sidebar-2;
+}
+.contenedor .footer{
+    background: #222831;
+    /* Nombre que definimos arriba del area que ocupara */
+    grid-area: footer;
+}
+
+/* Se podría invertir facilmente el orden de los elementos cambiandole
+las clases desde el html de los mismos con la ayuda de MediaQueries. */
+/* O bien cambiando en el contenedor principal en la propiedad de grid-template-areas
+los nombres de las areas. */
+

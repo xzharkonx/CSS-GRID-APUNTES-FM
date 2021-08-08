@@ -1,0 +1,28 @@
+.contenedor {
+
+    /* De está forma le vamos a decir que el contenedor va a ser una grid. */
+    display: grid;
+    grid-gap: 20px; /* Para dar espaciados entre las cajas */
+    
+    /* Recomendación: usar el modo inspector, y en layaout activar la casila de la GRID */
+    
+    /* ---------------------------- Auto Fill & Auto Fit ---------------------------- */
+    
+    /* Para poderle indicar que tenga un tamaño maximo y minimo a esta GRID */
+    /* Podemos agregarle una funcion de minmax, donde le podemos 2 valores */
+    /* grid-template-columns:  repeat(4, minmax(100px, 1fr)); */
+    
+    /* Pero el contenido (los div que está dentro) aún no será responsivos, para ello 
+    hay que agregarle las propiedades de auto-fit y auto-fill en vez de indicarle el número
+    de columnas que queremos que tenga. */
+    
+    /* El contenido abarca solo lo que necesita, es decir, va a llenar las conlumnas con todo el contenido
+    que pueda poner dentro del contenedor (dependerá del contenido y de el tamaño que le demos) y el contenido
+    se hace responsivo */
+    grid-template-columns:  repeat(auto-fill, minmax(100px, 1fr));
+
+    /* El contenido abarca todo el espacio y el contenido se hace responsivo */
+    /* grid-template-columns:  repeat(auto-fit, minmax(100px, 1fr)); */
+
+
+}

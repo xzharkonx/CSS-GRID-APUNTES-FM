@@ -1,0 +1,25 @@
+.contenedor {
+
+    /* De está forma le vamos a decir que el contenedor va a ser una grid. */
+    display: grid;
+    grid-gap: 20px; /* Para dar espaciados entre las cajas */
+    
+    
+    /* grid-template-columns:  1fr 1fr 1fr 1fr 1fr;  */
+    
+    /* con repeat evitamos escribir todo el codigo de fr que se ve arriba. */
+    /* Pero tener Cuidado!!!, en algunos casos dará ERROR!!! */
+    
+    /* Solo hay que indicarle el número de veces que queremos que se repita
+    y la segunda unidad será el tamaño que querramos que mida cada grid. */
+    /* grid-template-columns:  repeat(6, 1fr);  */
+
+    /* También podemos combinar los tamaños. */
+    grid-template-columns: 200px repeat(4, 1fr) 200px; 
+
+    /* También aplica para las filas */
+    /* grid-template-rows: repeat(2, 1fr); */
+    /* Si nosotros le especificamos una más, entonces la agregará. */
+    grid-template-rows: repeat(3, 1fr);
+
+}
